@@ -49,22 +49,13 @@ let langArr = {
 };
 // Custom scripts
 
-// window.addEventListener("load", function () {
-//   if (localStorage.getItem("place1"))
-//     document.querySelector(".select__current").innerHTML =
-//       localStorage.getItem("place1");
-// });
 window.onload = () => {
- 
   if (localStorage.getItem("place1"))
     document.querySelector(".select__current").innerHTML =
       localStorage.getItem("place1");
-      if(localStorage.getItem("href")){
-        location.href=localStorage.getItem("href");
-        console.log("href")
-      }
-      
-  
+  if (localStorage.getItem("href")) {
+    location.href = localStorage.getItem("href");
+  }
 };
 
 const html = document.querySelector("html");
@@ -109,17 +100,17 @@ let select = function () {
     let lang = this.innerText;
     location.href = window.location.pathname + "#" + lang.toLowerCase();
     localStorage.setItem("place1", lang);
-    localStorage.setItem("href",document.location.href)
+    localStorage.setItem("href", document.location.href);
     selectBody.classList.remove("opacity");
     location.reload();
 
     if (localStorage.getItem("place1")) {
       lang = localStorage.getItem("place1");
     }
-     if(localStorage.getItem("href")){
-        location.href=localStorage.getItem("href");
-        console.log("href")
-      }
+    if (localStorage.getItem("href")) {
+      location.href = localStorage.getItem("href");
+      console.log("href");
+    }
   }
 };
 
@@ -136,12 +127,13 @@ function changeLanguage() {
   hash = hash.substring(1);
 
   if (!allLang.includes(hash)) {
-    if(localStorage.getItem("href")){
-      location.href=localStorage.getItem("href");
-      console.log("href")
+    if (localStorage.getItem("href")) {
+      location.href = localStorage.getItem("href");
+      console.log("href");
+      location.reload();
     }
 
-    location.reload();
+  
   }
   localStorage.setItem("lenguage", window.location);
   document.querySelector("title").innerHTML = langArr["unit"][hash];
