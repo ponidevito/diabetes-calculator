@@ -31,6 +31,11 @@ let langArr = {
     "en": "No more than 100 grams of carbohydrates",
     "ua": "Не більше 100 грам вуглеводів"
   },
+  "modal-carbon-second": {
+    "es": "Al menos 1 gramo de carbohidratos",
+    "en": "At least 1 gram of carbohydrates",
+    "ua": "Не менше 1 граму вуглеводів"
+  },
   "bu": {
     "es": "HC",
     "en": "BU",
