@@ -8,7 +8,7 @@
 # ES
 Calculadora para contar unidades de pan
 
-<a href="https:/ponidevito.github.io/calculator/" rel="nofollow">![image](https://user-images.githubusercontent.com/48261771/196913129-d7dd7fc6-d72f-4410-bb75-106d91e153e4.png)
+<a href="https:/ponidevito.github.io/calculator" rel="nofollow">![image](https://user-images.githubusercontent.com/48261771/196913129-d7dd7fc6-d72f-4410-bb75-106d91e153e4.png)
  Demo calculator</a>
 
 
