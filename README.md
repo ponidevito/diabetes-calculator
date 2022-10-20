@@ -8,7 +8,7 @@
 # ES
 Calculadora para contar unidades de pan
 
-<a href="https://ponidevito.github.io/calculator/" rel="nofollow">👀 Demo</a>
+<a href="https://ponidevito.github.io/diabet-calculator/" rel="nofollow">👀 Demo</a>
 
 
 
