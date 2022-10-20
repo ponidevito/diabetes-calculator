@@ -504,10 +504,6 @@ body {
   .calculator__picture {
     text-align: center;
   }
-
-  .form__result {
-    font-size: 34px;
-  }
 }
 
 @media (max-width: 991.98px) {
@@ -520,7 +516,7 @@ body {
   }
 
   .form__bread {
-    font-size: 27px;
+    font-size: 20px;
   }
 
   .form__result {

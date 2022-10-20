@@ -79,8 +79,7 @@
   }
   &__image {
     max-width: 100%;
-    @include lg {
-    }
+ 
   }
 }
 
@@ -169,7 +168,7 @@
     font-family: "Poppins";
     font-size: 26px;
     @include lg {
-      font-size: 27px;
+      font-size: 20px;
     }
   }
 
@@ -242,9 +241,7 @@
     font-size: 40px;
     line-height: 0.8;
     margin-left: auto;
-    @media (max-width: 1159.98px) {
-      font-size: 34px;
-    }
+   
     @include lg {
       font-size: 27px;
     }
