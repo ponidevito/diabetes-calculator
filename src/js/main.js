@@ -1,6 +1,6 @@
 // Custom scripts
 
-if (localStorage.getItem("href") === null) {
+if (localStorage.getItem("href") === null || localStorage.getItem("href") === undefined) {
   location.href = window.location.pathname + "#en";
 }
 
