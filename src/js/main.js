@@ -1,12 +1,13 @@
 // Custom scripts
 
+if (localStorage.getItem("href") === null) {
+  location.href = window.location.pathname + "#en";
+}
+
 window.onload = () => {
   if (localStorage.getItem("place1"))
     document.querySelector(".select__current").innerHTML =
       localStorage.getItem("place1");
-  if (localStorage.getItem("href")) {
-    location.href = localStorage.getItem("href");
-  }
 };
 
 const html = document.querySelector("html");
@@ -54,13 +55,8 @@ let select = function () {
     localStorage.setItem("href", document.location.href);
     selectBody.classList.remove("opacity");
     location.reload();
-
     if (localStorage.getItem("place1")) {
       lang = localStorage.getItem("place1");
-    }
-    if (localStorage.getItem("href")) {
-      location.href = localStorage.getItem("href");
-      console.log("href");
     }
   }
 };
@@ -76,16 +72,10 @@ window.addEventListener("load", function () {
 function changeLanguage() {
   let hash = window.location.hash;
   hash = hash.substring(1);
-
   if (!allLang.includes(hash)) {
-    if (localStorage.getItem("href")) {
-      location.href = localStorage.getItem("href");
-      location.reload();
-    }
-
-  
+    location.href = localStorage.getItem("href");
+    location.reload();
   }
-  localStorage.setItem("lenguage", window.location);
   document.querySelector("title").innerHTML = langArr["unit"][hash];
   for (let key in langArr) {
     let elem = document.querySelector(".lng-" + key);
