@@ -194,10 +194,12 @@ carbohydrates.oninput = () => {
     carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
     if (carbohydrates.value > 100) {
       document.querySelector(".form__modal-carbon").classList.add("_active");
+      carbohydrates.style.border = "1px solid red";
     } else if (carbohydrates.value < 1) {
       document
         .querySelector(".form__modal-carbon-second")
         .classList.add("_active");
+        carbohydrates.style.border = "1px solid red";
     } else {
       document.querySelector(".form__modal-carbon").classList.remove("_active");
       document
@@ -239,6 +241,7 @@ html.addEventListener("click", function (e) {
       .querySelector(".form__modal-carbon-second")
       .classList.remove("_active");
     selectBody.classList.remove("opacity");
+   
   }
 });
 
