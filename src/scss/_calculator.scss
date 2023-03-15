@@ -1,0 +1,295 @@
+.section {
+  &__calculator {
+    padding-top: 100px;
+    @include lg {
+      padding-top: 80px;
+    }
+    @include sm {
+      padding-top: 40px;
+    }
+  }
+}
+
+.calculator {
+  &__container {
+    max-width: 700px;
+  }
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    @include md {
+      justify-content: center;
+    }
+  }
+  &__title {
+    text-align: center;
+    @include xs {
+      font-size: 15px;
+    }
+  }
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    @include md {
+      display: none;
+    }
+  }
+  &__items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    @media (max-width: 1159.98px) {
+      gap: 30px;
+    }
+    @include md {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    background: #bdc3c7;
+    background: -webkit-linear-gradient(to left, #2c3e50, #bdc3c7);
+    background: linear-gradient(to left, #202c38, #697176);
+    flex: 0 1 100%;
+    &:first-child {
+      box-shadow: 0px 5px 9px 0px rgba(0, 0, 0, 0.75);
+      padding: 10px 30px 30px 30px;
+      @include md {
+        padding: 10px;
+        box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.75);
+      }
+    }
+
+    @include md {
+      flex: 1 1 100%;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo-item {
+    display: none;
+
+    @include md {
+      display: block;
+      text-align: center;
+      margin-top: 45px;
+    }
+  }
+  &__picture {
+    @media (max-width: 1159.98px) {
+      text-align: center;
+    }
+  }
+  &__image {
+    max-width: 100%;
+  }
+}
+//  form =====================
+.form {
+  &__btnBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    @include lg {
+      gap: 15px;
+    }
+    @include xs {
+      flex-direction: column-reverse;
+    }
+  }
+  &__btn1 {
+    cursor: pointer;
+    width: 20%;
+    min-height: 50px;
+    font-size: 18px;
+    background-color: rgb(211, 241, 170);
+    transition: 0.3s ease;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgb(185, 221, 135);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+    @include md {
+      width: 50%;
+    }
+    @include xs {
+      width: 100%;
+    }
+  }
+
+  &__btn2 {
+    cursor: pointer;
+    width: 20%;
+    min-height: 50px;
+    font-size: 18px;
+    background-color: rgb(211, 241, 170);
+    transition: 0.3s ease;
+    border-radius: 5px;
+    &:hover {
+      background-color: rgb(185, 221, 135);
+    }
+    &:active {
+      transform: translateY(2px);
+    }
+    @include md {
+      width: 50%;
+    }
+    @include xs {
+      width: 100%;
+    }
+  }
+  &__resultBox {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    width: 50%;
+    height: 50px;
+    border-top: 1px solid rgb(211, 241, 170);
+    border-bottom: 1px solid rgb(211, 241, 170);
+    padding: 5px 0px;
+    @include md {
+      width: 50%;
+    }
+    @include xs {
+      width: 100%;
+    }
+  }
+
+  &__bread-units {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    overflow: hidden;
+  }
+  &__result {
+    font-size: 40px;
+    line-height: 0.8;
+    margin-left: auto;
+    @include lg {
+      font-size: 27px;
+    }
+  }
+  &__btnText {
+    font-size: 16px;
+    @include md {
+      font-size: 14px;
+    }
+    @include xs {
+      font-size: 17px;
+    }
+  }
+  &__bread {
+    font-family: "Poppins";
+    font-size: 26px;
+    @include lg {
+      font-size: 20px;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    font-family: Poppins;
+    font-size: 19px;
+    letter-spacing: 0.1px;
+  }
+  &__modal-carbon {
+    border-radius: 5px;
+    letter-spacing: 0.3px;
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    height: 30px;
+    opacity: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    padding: 10px;
+    @include sm {
+      font-size: 14px;
+      left: 5px;
+      right: 5px;
+    }
+    &._active {
+      color: #ffffff;
+      background-color: rgb(73, 73, 73);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+  &__modal-carbon-second {
+    @extend .form__modal-carbon;
+    &._active {
+      color: #ffffff;
+      background-color: rgb(73, 73, 73);
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  &__input {
+    background-color: #eff6e7;
+  }
+
+  &__resultBtn {
+    border-radius: 5px;
+    min-height: 50px;
+    background-color: rgb(211, 241, 170);
+    font-size: 22px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: rgb(185, 221, 135);
+    }
+    &._active {
+      background-color: rgb(230, 251, 200);
+      color: lightgray;
+    }
+  }
+}
+//  input
+.input {
+  border-radius: 5px;
+  padding: 0px 0px 0px 20px;
+  outline: none;
+  min-height: 50px;
+  margin-bottom: 20px;
+
+  &:focus {
+    border: 1px solid rgb(124, 231, 241);
+  }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="number"],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+.form__resultBtn[disabled]:hover {
+  background-color: #d3f1aa;
+}
