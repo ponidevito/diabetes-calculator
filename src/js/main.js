@@ -35,6 +35,36 @@ addInfo();
 function pushValue(event) {
   mass.push(carbohydrates.value);
   number.push(totalWeight.value);
+  if (xo !== 0) {
+    let sum =
+      (mass.reduce((a, b) => a + b, 0) / xo) *
+      number.reduce((a, b) => a + b, 0);
+    massive.push(sum);
+    let finalSum = massive.toString();
+    let a = finalSum.split(",").map(Number);
+    let summa = parseFloat(a.join(""));
+    if (isNaN(summa)) {
+      mass = [];
+      number = [];
+      massive = [];
+      xo = [];
+      pushValue(event);
+    } else {
+      result.textContent = "";
+      result.textContent += `${(summa / 100).toFixed(2)}`;
+      event.preventDefault();
+      console.log(summa);
+      resetAll();
+      carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
+
+      return true;
+    }
+  }
+}
+
+btnResult.addEventListener("click", pushValue);
+
+if (xo !== 0) {
   let sum =
     (mass.reduce((a, b) => a + b, 0) / xo) * number.reduce((a, b) => a + b, 0);
   massive.push(sum);
@@ -57,9 +87,9 @@ function pushValue(event) {
 
     return true;
   }
+} else {
+  // handle the case when xo === 0
 }
-
-btnResult.addEventListener("click", pushValue);
 
 //function reset values
 function resetAll() {
@@ -83,7 +113,6 @@ function resetBtnValue(event) {
 }
 btn1.addEventListener("click", resetBtnValue);
 btn2.addEventListener("click", resetBtnValue);
-
 
 // regular expression
 let carbonRegExp = /^[0-9]{1,20}$/;
@@ -146,4 +175,3 @@ html.addEventListener("click", function (e) {
       .classList.remove("_active");
   }
 });
-
