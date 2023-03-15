@@ -266,6 +266,9 @@
       background-color: rgb(230, 251, 200);
       color: lightgray;
     }
+    &:active {
+      transform: translateY(2px);
+    }
   }
 }
 //  input
@@ -294,4 +297,5 @@ input[type="number"]:focus {
 }
 .form__resultBtn[disabled]:hover {
   background-color: #d3f1aa;
+  transform: translateY(0);
 }

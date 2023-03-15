@@ -32,6 +32,7 @@ function addInfo() {
 addInfo();
 
 // function push value to array
+
 function pushValue(event) {
   mass.push(carbohydrates.value);
   number.push(totalWeight.value);
@@ -56,7 +57,6 @@ function pushValue(event) {
       console.log(summa);
       resetAll();
       carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
-
       return true;
     }
   }
@@ -64,32 +64,36 @@ function pushValue(event) {
 
 btnResult.addEventListener("click", pushValue);
 
-if (xo !== 0) {
-  let sum =
-    (mass.reduce((a, b) => a + b, 0) / xo) * number.reduce((a, b) => a + b, 0);
-  massive.push(sum);
-  let finalSum = massive.toString();
-  let a = finalSum.split(",").map(Number);
-  let summa = parseFloat(a.join(""));
-  if (isNaN(summa)) {
-    mass = [];
-    number = [];
-    massive = [];
-    xo = [];
-    pushValue(event);
-  } else {
-    result.textContent = "";
-    result.textContent += `${(summa / 100).toFixed(2)}`;
-    event.preventDefault();
-    console.log(summa);
-    resetAll();
-    carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
-
-    return true;
+function pushValue(event) {
+  mass.push(carbohydrates.value);
+  number.push(totalWeight.value);
+  if (xo !== 0) {
+    let sum =
+      (mass.reduce((a, b) => a + b, 0) / xo) *
+      number.reduce((a, b) => a + b, 0);
+    massive.push(sum);
+    let finalSum = massive.toString();
+    let a = finalSum.split(",").map(Number);
+    let summa = parseFloat(a.join(""));
+    if (isNaN(summa)) {
+      mass = [];
+      number = [];
+      massive = [];
+      xo = [];
+      pushValue(event);
+    } else {
+      result.textContent = "";
+      result.textContent += `${(summa / 100).toFixed(2)}`;
+      event.preventDefault();
+      console.log(summa);
+      resetAll();
+      carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
+      return true;
+    }
   }
-} else {
-  // handle the case when xo === 0
 }
+
+btnResult.addEventListener("click", pushValue);
 
 //function reset values
 function resetAll() {
