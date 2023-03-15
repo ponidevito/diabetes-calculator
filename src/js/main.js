@@ -34,66 +34,54 @@ addInfo();
 // function push value to array
 
 function pushValue(event) {
-  mass.push(carbohydrates.value);
-  number.push(totalWeight.value);
+  const carbValue = parseFloat(carbohydrates.value);
+  const totalWeightValue = parseFloat(totalWeight.value);
+
+  if (
+    isNaN(carbValue) ||
+    isNaN(totalWeightValue) ||
+    carbValue === 0 ||
+    totalWeightValue === 0
+  ) {
+    result.textContent = "Error: incorrect input";
+    return false;
+  }
+
+  mass.push(carbValue);
+  number.push(totalWeightValue);
+  xo = parseInt(xo);
   if (xo !== 0) {
-    let sum =
-      (mass.reduce((a, b) => a + b, 0) / xo) *
-      number.reduce((a, b) => a + b, 0);
-    massive.push(sum);
-    let finalSum = massive.toString();
-    let a = finalSum.split(",").map(Number);
-    let summa = parseFloat(a.join(""));
-    if (isNaN(summa)) {
-      mass = [];
-      number = [];
-      massive = [];
-      xo = [];
-      pushValue(event);
-    } else {
-      result.textContent = "";
-      result.textContent += `${(summa / 100).toFixed(2)}`;
-      event.preventDefault();
-      console.log(summa);
-      resetAll();
-      carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
-      return true;
+    const massSum = mass.reduce((a, b) => a + b, 0);
+    if (massSum === 0) {
+      return false;
     }
+    console.log(mass);
+    console.log(number);
+    console.log(xo);
+    const sum = (massSum / xo) * number.reduce((a, b) => a + b, 0);
+    massive.push(sum);
+    const finalSum = massive.toString();
+    const a = finalSum.split(",").map(Number);
+    const summa = parseFloat(a.join(""));
+
+    if (isNaN(summa) || summa === Infinity) {
+      result.textContent = "Error: undefined result";
+      return false;
+    }
+
+    result.textContent = "";
+    result.textContent += `${(summa / 100).toFixed(2)}`;
+    event.preventDefault();
+
+    console.log(summa);
+    resetAll();
+    carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
+    return true;
   }
 }
 
 btnResult.addEventListener("click", pushValue);
 
-function pushValue(event) {
-  mass.push(carbohydrates.value);
-  number.push(totalWeight.value);
-  if (xo !== 0) {
-    let sum =
-      (mass.reduce((a, b) => a + b, 0) / xo) *
-      number.reduce((a, b) => a + b, 0);
-    massive.push(sum);
-    let finalSum = massive.toString();
-    let a = finalSum.split(",").map(Number);
-    let summa = parseFloat(a.join(""));
-    if (isNaN(summa)) {
-      mass = [];
-      number = [];
-      massive = [];
-      xo = [];
-      pushValue(event);
-    } else {
-      result.textContent = "";
-      result.textContent += `${(summa / 100).toFixed(2)}`;
-      event.preventDefault();
-      console.log(summa);
-      resetAll();
-      carbohydrates.style.border = "1px solid rgb(124, 231, 241)";
-      return true;
-    }
-  }
-}
-
-btnResult.addEventListener("click", pushValue);
 
 //function reset values
 function resetAll() {
