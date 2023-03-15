@@ -11,8 +11,9 @@ Calculadora para contar unidades de pan
 <a href="https://ponidevito.github.io/calculator/" rel="nofollow">👀 Demo</a>
 
 
+![Записати](https://user-images.githubusercontent.com/48261771/225385971-e5333428-a1b2-45e2-8e91-01f794901315.PNG)
 
-![calculator](https://user-images.githubusercontent.com/48261771/196918983-4f229349-5dc1-4a2c-8c49-a617c5e8bd10.PNG)
+
 
 
 
