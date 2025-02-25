@@ -19,9 +19,9 @@ function addInfo() {
   btnXo.forEach((item) => {
     item.addEventListener("click", (event) => {
       btnXo.forEach((item) => {
-        item.style.backgroundColor = "rgb(211, 241, 170)";
+        item.style.backgroundColor = "rgb(239 246 231)";
       });
-      item.style.backgroundColor = "rgb(140, 211, 41)";
+      item.style.backgroundColor = " rgb(255, 213, 45)";
       xo.push(item.value);
       result.innerHTML = "";
       event.preventDefault();
@@ -92,7 +92,7 @@ function resetAll() {
   carbohydrates.value = "";
   totalWeight.value = "";
   btnXo.forEach((item) => {
-    item.style.backgroundColor = "#d3f1aa";
+    item.style.backgroundColor = "rgb(239 246 231)";
     btnResult.setAttribute("disabled", "");
   });
   return true;
@@ -150,8 +150,8 @@ const checking = () =>
     carbohydrates.value > 100 ||
     carbohydrates.value < 1 ||
     totalWeight.value.length < 2 ||
-    (btn1.style.backgroundColor !== "rgb(140, 211, 41)") &
-      (btn2.style.backgroundColor !== "rgb(140, 211, 41)"));
+    (btn1.style.backgroundColor !== "rgb(255, 213, 45)") &
+      (btn2.style.backgroundColor !== "rgb(255, 213, 45)"));
 
 carbohydrates.addEventListener("input", checking);
 totalWeight.addEventListener("input", checking);

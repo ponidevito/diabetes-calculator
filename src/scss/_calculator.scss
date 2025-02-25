@@ -29,7 +29,7 @@
   &__title {
     text-align: center;
     @include xs {
-      font-size: 15px;
+      font-size: 22px;
     }
   }
   &__logo {
@@ -62,7 +62,8 @@
       padding: 10px 30px 30px 30px;
       @include md {
         padding: 10px;
-        box-shadow: 0px 4px 9px -2px rgba(0, 0, 0, 0.75);
+        box-shadow: none;
+        background: none;
       }
     }
 
@@ -93,6 +94,10 @@
   &__image {
     max-width: 100%;
   }
+  &__faq {
+    margin-top: 20px;
+    font-size: 15px;
+  }
 }
 //  form =====================
 .form {
@@ -113,13 +118,13 @@
     cursor: pointer;
     width: 20%;
     min-height: 50px;
-    font-size: 18px;
-    background-color: rgb(211, 241, 170);
+    font-size: 20px;
+    background-color: rgb(239 246 231);
     transition: 0.3s ease;
     border-radius: 5px;
     outline: none;
     &:hover {
-      background-color: rgb(185, 221, 135);
+      background-color: rgb(255 213 45);
     }
     &:active {
       transform: translateY(2px);
@@ -136,13 +141,13 @@
     cursor: pointer;
     width: 20%;
     min-height: 50px;
-    font-size: 18px;
-    background-color: rgb(211, 241, 170);
+    font-size: 20px;
+    background-color: rgb(239 246 231);
     transition: 0.3s ease;
     border-radius: 5px;
     outline: none;
     &:hover {
-      background-color: rgb(185, 221, 135);
+      background-color: rgb(255, 213, 45);
     }
     &:active {
       transform: translateY(2px);
@@ -160,10 +165,10 @@
     justify-content: space-between;
     gap: 20px;
     width: 50%;
-    height: 50px;
-    border-top: 1px solid rgb(211, 241, 170);
-    border-bottom: 1px solid rgb(211, 241, 170);
-    padding: 5px 0px;
+    height: 65px;
+    border-top: 1px solid rgb(239 246 231);
+    border-bottom: 1px solid rgb(239 246 231);
+    padding: 15px 0px;
     @include md {
       width: 50%;
     }
@@ -180,14 +185,19 @@
   }
   &__result {
     font-size: 40px;
-    line-height: 0.8;
+    line-height: 28px;
     margin-left: auto;
-    @include lg {
-      font-size: 27px;
-    }
+    color: rgb(255, 213, 45);
+    width: 100%;
+    max-width: 200px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    text-overflow: clip;
   }
   &__btnText {
     font-size: 16px;
+    line-height: 13px;
     @include md {
       font-size: 14px;
     }
@@ -196,11 +206,7 @@
     }
   }
   &__bread {
-    font-family: "Poppins";
     font-size: 26px;
-    @include lg {
-      font-size: 20px;
-    }
   }
 
   &__label {
@@ -255,15 +261,15 @@
   &__resultBtn {
     border-radius: 5px;
     min-height: 50px;
-    background-color: rgb(211, 241, 170);
+    background-color: rgb(255, 213, 45);
     font-size: 22px;
     letter-spacing: 1px;
     transition: 0.3s ease;
     &:hover {
-      background-color: rgb(185, 221, 135);
+      background-color: rgb(255, 213, 45);
     }
     &._active {
-      background-color: rgb(230, 251, 200);
+      background-color: rgb(255, 213, 45);
       color: lightgray;
     }
     &:active {
@@ -278,10 +284,7 @@
   outline: none;
   min-height: 50px;
   margin-bottom: 20px;
-
-  &:focus {
-    border: 1px solid rgb(124, 231, 241);
-  }
+  font-size: 20px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -295,7 +298,11 @@ input[type="number"]:focus {
   appearance: none;
   -moz-appearance: textfield;
 }
+.form__resultBtn[disabled] {
+  background-color: rgb(255, 213, 45);
+  pointer-events: none;
+}
 .form__resultBtn[disabled]:hover {
-  background-color: #d3f1aa;
+  background-color: rgb(255 211 94);
   transform: translateY(0);
 }

@@ -8,8 +8,6 @@
 // Sections or Pages SCSS-files imports
 @import "./calculator";
 
-
-
 // @import './footer';
 
 // Libs
@@ -21,8 +19,13 @@ body {
   font-family: Karla;
   font-size: 20px;
   letter-spacing: 0.4px;
+  line-height: 18px;
   background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
   color: #fefffd;
+  @include md {
+    background: linear-gradient(to left, #202c38, #697176);
+  }
+
 }
 
 .wrapper {
