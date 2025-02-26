@@ -4,9 +4,6 @@
     @include lg {
       padding-top: 80px;
     }
-    @include sm {
-      padding-top: 40px;
-    }
   }
 }
 
@@ -22,21 +19,20 @@
     &:not(:last-child) {
       margin-bottom: 15px;
     }
-    @include md {
-      justify-content: center;
-    }
   }
   &__title {
-    text-align: center;
     @include xs {
-      font-size: 22px;
+      font-size: 18px;
     }
   }
   &__logo {
     display: inline-flex;
     align-items: center;
-    @include md {
-      display: none;
+    img {
+      width: 30px;
+      @include xs {
+        width: 25px;
+      }
     }
   }
   &__items {
@@ -77,15 +73,17 @@
     flex-direction: column;
   }
 
-  &__logo-item {
-    display: none;
-
-    @include md {
-      display: block;
-      text-align: center;
-      margin-top: 45px;
-    }
-  }
+  // &__logo-item {
+  //   display: none;
+  //   img {
+  //     width: 30px;
+  //   }
+  //   @include md {
+  //     display: block;
+  //     text-align: center;
+  //     margin-top: 45px;
+  //   }
+  // }
   &__picture {
     @media (max-width: 1159.98px) {
       text-align: center;
@@ -96,7 +94,7 @@
   }
   &__faq {
     margin-top: 20px;
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 //  form =====================
