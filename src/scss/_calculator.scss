@@ -19,10 +19,15 @@
     &:not(:last-child) {
       margin-bottom: 15px;
     }
+    @include md {
+      justify-content: center;
+    }
   }
   &__title {
+    text-align: center;
+
     @include xs {
-      font-size: 18px;
+      font-size: 22px;
     }
   }
   &__logo {
@@ -30,9 +35,9 @@
     align-items: center;
     img {
       width: 30px;
-      @include xs {
-        width: 25px;
-      }
+    }
+    @include md {
+      display: none;
     }
   }
   &__items {
@@ -73,17 +78,17 @@
     flex-direction: column;
   }
 
-  // &__logo-item {
-  //   display: none;
-  //   img {
-  //     width: 30px;
-  //   }
-  //   @include md {
-  //     display: block;
-  //     text-align: center;
-  //     margin-top: 45px;
-  //   }
-  // }
+  &__logo-item {
+    display: none;
+    img {
+      width: 150px;
+    }
+    @include md {
+      display: block;
+      text-align: center;
+      margin-top: 45px;
+    }
+  }
   &__picture {
     @media (max-width: 1159.98px) {
       text-align: center;
