@@ -7,6 +7,9 @@
 
 ---
 
+📱 **Завантажити Android APK:**  
+[📦 dia-calculator.apk](./dia-calculator.apk)
+
 ## ⚙️ Можливості
 
 - ✅ Розрахунок болюсної дози інсуліну
