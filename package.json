@@ -1,12 +1,15 @@
 {
-  "name": "new__template",
+  "name": "diabet-calculator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Веб-калькулятор хлібних одиниць (ХО) для людей з діабетом",
+  "private": true,
   "main": "gulpfile.js",
   "scripts": {
+    "start": "gulp watch",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["diabetes", "calculator", "insulin", "bread-units"],
   "author": "",
   "license": "ISC",
   "dependencies": {
