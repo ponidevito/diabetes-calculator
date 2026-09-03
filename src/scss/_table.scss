@@ -107,6 +107,31 @@
   text-align: right;
   white-space: nowrap;
 }
+
+// small pill action button - "use this food in the calculator"
+.link-btn {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.82rem;
+  line-height: 1;
+  color: var(--accent-strong);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.link-btn:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+.link-btn:active {
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+}
 .food-table__empty {
   text-align: center;
   color: var(--text-soft);
