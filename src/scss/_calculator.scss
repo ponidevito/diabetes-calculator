@@ -7,14 +7,20 @@
 }
 .calc-page__body {
   flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 1.25rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
+}
+.calc-page__container {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
 }
 .calc-page__card {
   width: 100%;
   max-width: 440px;
+  margin: 0 auto;
+}
+.food-table-section {
+  margin-top: 2.75rem;
 }
 
 // ---------- calculator card ----------
@@ -214,7 +220,17 @@
 .result__gi {
   margin-top: 0.5rem;
   font-size: 0.85rem;
+  font-weight: 600;
   color: var(--text-soft);
+}
+.result__gi--low {
+  color: var(--gi-low);
+}
+.result__gi--mid {
+  color: var(--gi-mid);
+}
+.result__gi--high {
+  color: var(--gi-high);
 }
 .result.pop {
   animation: result-pop 0.32s ease;

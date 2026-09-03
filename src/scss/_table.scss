@@ -1,0 +1,198 @@
+// ---------- food table ----------
+// Ported from the breadunits.top calculator (same author/project).
+.section-head {
+  margin-bottom: 1.1rem;
+}
+.section-head h2 {
+  font-size: clamp(1.35rem, 1.05rem + 1.3vw, 1.8rem);
+}
+.section-head p {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+.section-head .table-note {
+  margin-top: 0.3rem;
+  font-size: 0.73rem;
+}
+
+.table-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.table-search {
+  position: relative;
+}
+.table-search input {
+  width: 100%;
+  font: inherit;
+  padding: 0.8rem 0.9rem 0.8rem 2.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+.table-search input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--ring);
+}
+.table-search svg {
+  position: absolute;
+  left: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-soft);
+}
+
+.table-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+// GI filter chips sit under the category filter; a hairline separates them
+.table-gi-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border);
+}
+
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--surface);
+  overflow-x: auto;
+}
+
+.food-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.food-table thead th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-soft);
+  background: var(--surface-2);
+  padding: 0.8rem 1rem;
+}
+.food-table td {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border);
+  vertical-align: middle;
+}
+.food-table tbody tr:hover {
+  background: var(--surface-2);
+}
+.food-table__cat {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.1rem;
+}
+.food-table__action {
+  text-align: right;
+  white-space: nowrap;
+}
+.food-table__empty {
+  text-align: center;
+  color: var(--text-soft);
+  padding: 2rem 1rem;
+}
+
+.table-more {
+  display: flex;
+  justify-content: center;
+  padding-top: 0.65rem;
+}
+.table-more__button {
+  min-width: min(100%, 13rem);
+}
+.table-more[hidden] {
+  display: none;
+}
+
+// coloured pill used in the table cell and the calculator result
+.gi-badge {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.28rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.gi-badge--low {
+  color: var(--gi-low);
+  background: var(--gi-low-bg);
+}
+.gi-badge--mid {
+  color: var(--gi-mid);
+  background: var(--gi-mid-bg);
+}
+.gi-badge--high {
+  color: var(--gi-high);
+  background: var(--gi-high-bg);
+}
+.gi-badge--na {
+  color: var(--text-soft);
+  background: var(--surface-2);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .food-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  .food-table,
+  .food-table tbody,
+  .food-table tr,
+  .food-table td {
+    display: block;
+    width: 100%;
+  }
+  .food-table tr {
+    border-top: 1px solid var(--border);
+    padding: 0.5rem 0;
+  }
+  .food-table tr:first-child {
+    border-top: 0;
+  }
+  .food-table td {
+    border: 0;
+    padding: 0.3rem 1rem;
+  }
+  .food-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-soft);
+  }
+  .food-table__action {
+    text-align: left;
+  }
+  .table-more__button {
+    width: 100%;
+  }
+}

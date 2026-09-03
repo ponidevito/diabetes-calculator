@@ -90,6 +90,7 @@
    </header>
 
    <main class="calc-page__body">
+      <div class="calc-page__container">
       <div class="calc-page__card">
          <div class="calc-card" id="calculator" data-mode="food">
             <h1 class="calc-card__title" data-i18n="calc.title">Калькулятор хлібних одиниць</h1>
@@ -157,6 +158,50 @@
          </div>
 
          <p class="calc-disclaimer" data-i18n="disc.p1">Цей калькулятор надається виключно в інформаційних та освітніх цілях. Він не є медичним пристроєм і не діагностує, не лікує та не запобігає жодним захворюванням. Результати є приблизними оцінками й не можуть замінювати пораду кваліфікованого медичного фахівця.</p>
+      </div>
+
+      <section id="food-table" class="food-table-section" aria-labelledby="table-title">
+         <div class="section-head">
+            <h2 id="table-title" data-i18n="table.h2">Таблиця хлібних одиниць</h2>
+            <p data-i18n="table.lead">Орієнтовна кількість продукту, що містить одну хлібну одиницю, та вуглеводи на 100 г.</p>
+            <p class="table-note" data-i18n="table.note">*Значення в таблиці — приблизні довідкові цифри й можуть відрізнятися залежно від сорту та способу приготування продукту.</p>
+            <p class="table-note" data-i18n="table.gi.note">Колонка «ГІ» — приблизний глікемічний індекс: низький ≤ 55, середній 56–69, високий ≥ 70. «—» означає, що продукт майже не містить вуглеводів.</p>
+         </div>
+
+         <div class="table-controls">
+            <div class="table-search">
+               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                  <circle cx="11" cy="11" r="7" />
+                  <path d="m21 21-4.3-4.3" />
+               </svg>
+               <input type="search" id="table-search" autocomplete="off"
+                  data-i18n-attr="placeholder:table.search,aria-label:table.search.label" placeholder="Пошук продукту…"
+                  aria-label="Пошук продукту в таблиці">
+            </div>
+            <div class="table-filter" role="group" aria-label="Categories"></div>
+            <div class="table-gi-filter" role="group" data-i18n-attr="aria-label:table.gi.label"
+               aria-label="Фільтр за глікемічним індексом"></div>
+         </div>
+
+         <div class="table-wrap">
+            <table class="food-table">
+               <thead>
+                  <tr>
+                     <th scope="col" data-i18n="table.col.product">Продукт</th>
+                     <th scope="col" data-i18n="table.col.amount">Кількість на 1 ХО</th>
+                     <th scope="col" data-i18n="table.col.carbs">Вуглеводи / 100 г</th>
+                     <th scope="col" data-i18n="table.col.gi">ГІ</th>
+                     <th scope="col"><span class="visually-hidden">Actions</span></th>
+                  </tr>
+               </thead>
+               <tbody id="food-tbody"></tbody>
+            </table>
+         </div>
+         <div class="table-more">
+            <button class="btn btn--ghost table-more__button" id="table-toggle" type="button" aria-controls="food-tbody"
+               aria-expanded="false" data-i18n="table.expand">Показати більше</button>
+         </div>
+      </section>
       </div>
    </main>
 </div>
