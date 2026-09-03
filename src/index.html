@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Калькулятор хлібних одиниць</title>
+    <meta name="theme-color" content="#0f9d8f">
+    <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="./css/style.min.css">
+    <script>
+        // Apply the saved/preferred theme before first paint to avoid a flash.
+        (function () {
+            document.documentElement.classList.add("js");
+            try {
+                var t = localStorage.getItem("buc-theme");
+                if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+                document.documentElement.setAttribute("data-theme", t);
+            } catch (e) { }
+        })();
+    </script>
 </head>
 
 <body>
     <div class="wrapper">
-
-        <!-- Header -->
-    <!-- @@include('./html/_header.html') -->
 
     <!-- Main Page -->
     <main class="main">
@@ -23,12 +33,7 @@
 
     </main>
 
-    <!-- Footer -->
-    <!-- @@include('./html/_footer.html') -->
-
-
     </div>
-    
 
 
 
