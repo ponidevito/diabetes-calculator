@@ -55,6 +55,7 @@
     setMeta('meta[property="og:locale"]', "content", { uk: "uk_UA", en: "en_US", es: "es_ES" }[state.lang]);
 
     updateLangSwitch();
+    relabelTableFilters();
     rebuildFoodOptions();
     rebuildTable();
   }
@@ -439,6 +440,19 @@
         rebuildTable();
       });
       wrap.appendChild(b);
+    });
+  }
+
+  // re-label the (already built) filter chips for the current language,
+  // keeping each row's active selection
+  function relabelTableFilters() {
+    $all(".table-filter .chip").forEach(function (c) {
+      var k = c.getAttribute("data-cat");
+      c.textContent = k === "all" ? t("table.filter.all") : t("cat." + k);
+    });
+    $all(".table-gi-filter .chip").forEach(function (c) {
+      var k = c.getAttribute("data-gi");
+      c.textContent = k === "all" ? t("table.gi.all") : t("gi." + k);
     });
   }
 
