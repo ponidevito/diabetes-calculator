@@ -23,6 +23,14 @@
   margin-top: 0;
 }
 
+// _reset.scss forces `section { display: block; }`, which — being an author
+// rule — beats the browser's built-in `[hidden] { display: none }` no matter
+// its specificity. Without this, the table section (a <section>) stays
+// visible under the calculator even while its `hidden` attribute is set.
+.view-panel[hidden] {
+  display: none !important;
+}
+
 // ---------- bottom nav (app tabs: Calculator / Food table) ----------
 .bottom-nav {
   position: fixed;
