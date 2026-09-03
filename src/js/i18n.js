@@ -16,6 +16,7 @@ window.BUC_I18N = {
     "nav.faq": "Питання",
     "nav.skip": "До калькулятора",
     "nav.menu": "Меню",
+    "nav.sections": "Розділи застосунку",
 
     "theme.toggle": "Змінити тему",
     "lang.label": "Мова",
@@ -160,6 +161,7 @@ window.BUC_I18N = {
     "nav.faq": "FAQ",
     "nav.skip": "To the calculator",
     "nav.menu": "Menu",
+    "nav.sections": "App sections",
 
     "theme.toggle": "Toggle theme",
     "lang.label": "Language",
@@ -304,6 +306,7 @@ window.BUC_I18N = {
     "nav.faq": "Preguntas",
     "nav.skip": "A la calculadora",
     "nav.menu": "Menú",
+    "nav.sections": "Secciones de la app",
 
     "theme.toggle": "Cambiar tema",
     "lang.label": "Idioma",

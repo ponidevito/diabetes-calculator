@@ -463,8 +463,41 @@
     var weight = $("#calc-weight");
     if (weight && !num(weight.value)) weight.value = food.piece || 100;
     calculate();
-    var calc = document.getElementById("calculator");
-    if (calc) calc.scrollIntoView({ behavior: "smooth", block: "start" });
+    setView("calculator");
+  }
+
+  /* ---------------- app view (bottom-nav tabs) ----------------
+   * App build only: the calculator and the food table are separate
+   * full-screen tabs instead of one long scrolling page. */
+  function setView(view) {
+    view = view === "table" ? "table" : "calculator";
+    $all(".view-panel").forEach(function (el) {
+      el.hidden = el.getAttribute("data-view") !== view;
+    });
+    $all("[data-view-tab]").forEach(function (b) {
+      var active = b.getAttribute("data-view-tab") === view;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-selected", active ? "true" : "false");
+      b.tabIndex = active ? 0 : -1;
+    });
+    window.scrollTo(0, 0);
+  }
+
+  function initViewTabs() {
+    var tabs = $all("[data-view-tab]");
+    if (!tabs.length) return;
+    tabs.forEach(function (btn) {
+      btn.addEventListener("click", function () { setView(btn.getAttribute("data-view-tab")); });
+      btn.addEventListener("keydown", function (e) {
+        var i = tabs.indexOf(btn);
+        if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+          e.preventDefault();
+          var next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+          next.focus();
+          setView(next.getAttribute("data-view-tab"));
+        }
+      });
+    });
   }
 
   /* ---------------- nav ---------------- */
@@ -634,6 +667,8 @@
     initMenu();
     initReveal();
     initBackToCalc();
+    initViewTabs();
+    setView("calculator");
     applyI18n();
 
     var y = $("#year");

@@ -7,7 +7,7 @@
 }
 .calc-page__body {
   flex: 1 1 auto;
-  padding: 1.25rem 1rem calc(1.5rem + env(safe-area-inset-bottom));
+  padding: 1.25rem 1rem calc(88px + env(safe-area-inset-bottom));
 }
 .calc-page__container {
   width: 100%;
@@ -20,7 +20,46 @@
   margin: 0 auto;
 }
 .food-table-section {
-  margin-top: 2.75rem;
+  margin-top: 0;
+}
+
+// ---------- bottom nav (app tabs: Calculator / Food table) ----------
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  display: flex;
+  border-top: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom));
+}
+.bottom-nav__item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.5rem 0.4rem;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-soft);
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+.bottom-nav__item svg {
+  width: 22px;
+  height: 22px;
+}
+.bottom-nav__item:hover {
+  color: var(--text);
+}
+.bottom-nav__item.is-active {
+  color: var(--accent-strong);
 }
 
 // ---------- calculator card ----------
