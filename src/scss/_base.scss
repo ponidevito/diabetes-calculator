@@ -164,6 +164,11 @@ h3 {
   color: #062621;
 }
 
+:where(a, button, input, select, [tabindex]) {
+  // skip the ~300ms tap delay browsers use to detect double-tap-to-zoom
+  touch-action: manipulation;
+}
+
 :where(a, button, input, select, [tabindex]):focus-visible {
   outline: 3px solid var(--ring);
   outline-offset: 2px;

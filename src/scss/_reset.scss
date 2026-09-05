@@ -2,6 +2,10 @@
     padding: 0px;
     margin: 0px;
     border: 0px;
+    // mobile WebViews (incl. our Capacitor app shell) paint a grey rectangle
+    // over any tapped element by default, regardless of its own border-radius;
+    // we draw our own :hover/:active feedback instead, so drop the built-in one
+    -webkit-tap-highlight-color: transparent;
 }
 
 *,
