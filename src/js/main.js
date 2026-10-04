@@ -58,6 +58,7 @@
     relabelTableFilters();
     rebuildFoodOptions();
     rebuildTable();
+    relabelResult();
   }
   function setMeta(sel, attr, val) { var el = $(sel); if (el && val) el.setAttribute(attr, val); }
 
@@ -271,7 +272,11 @@
     card.classList.add("is-active", "pop");
     setTimeout(function () { card.classList.remove("pop"); }, 320);
     animateResult(xe);
+    renderResultText(v, xe);
+  }
 
+  // formula + GI lines under the result (re-run on language switch)
+  function renderResultText(v, xe) {
     var f = $("#calc-formula");
     f.textContent = t("calc.formula")
       .replace("{carbs}", round1(v.carbs))
@@ -281,6 +286,14 @@
     f.hidden = false;
 
     showGiForSelectedFood();
+  }
+
+  function relabelResult() {
+    var card = $("#calc-result");
+    if (!card || !card.classList.contains("is-active")) return;
+    var v = currentInputs();
+    if (!inputsValid(v)) return;
+    renderResultText(v, computeXE(v.carbs, v.weight, state.norm));
   }
 
   // GI note under the result, shown only when a listed food with a GI is selected
